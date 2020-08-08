@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 class MyMplCanvas(FigureCanvas):
     """FigureCanvas的最终的父类其实是QWidget。"""
 
-    def __init__(self, parent=None, width=5, height=4, dpi=100):
+    def __init__(self, parent=None, width=5, height=2, dpi=100):
 
         # 配置中文显示
         plt.rcParams['font.family'] = ['SimHei']  # 用来正常显示中文标签

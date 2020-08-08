@@ -184,7 +184,7 @@ if __name__ == '__main__':
     #
     # plt.legend()
     # plt.show()
-    # sensor.command(interact=True)
-    sensor.get_spec(inter_time=5, avg_scan=1, first=True)
+    sensor.command(interact=True)
+    # sensor.get_spec(inter_time=5, avg_scan=1, first=True)
     sensor.disconnect()
 
