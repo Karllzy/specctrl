@@ -115,8 +115,8 @@ class SpecCtrl:
                                   + b' 7', output_mode='BIN', wait_time=wait)
             result = result[2:-2].decode('ascii')
             result = result.split('\r')
-            wave_len = np.array([r.split('\t')[0] for r in result], dtype=float)
-            spec = np.array([r.split('\t')[1] for r in result], dtype=float)
+            wave_len = np.array([r.split('\t')[0] for r in result], dtype=float)[8:-3]
+            spec = np.array([r.split('\t')[1] for r in result], dtype=float)[8:-3]
             self.dark = spec
             result = (wave_len, spec)
         if mode == 'LIGHT':
@@ -125,8 +125,8 @@ class SpecCtrl:
                                   + b' 7', output_mode='BIN', wait_time=wait)
             result = result[2:-2].decode('ascii')
             result = result.split('\r')
-            wave_len = np.array([r.split('\t')[0] for r in result], dtype=float)
-            spec = np.array([r.split('\t')[1] for r in result], dtype=float)
+            wave_len = np.array([r.split('\t')[0] for r in result], dtype=float)[8:-3]
+            spec = np.array([r.split('\t')[1] for r in result], dtype=float)[8:-3]
             self.reference = spec
             result = (wave_len, spec)
         if mode == 'REFER':
@@ -137,8 +137,8 @@ class SpecCtrl:
             result = result[2:-2].decode('ascii')
 
             result = result.split('\r')
-            wave_len = np.array([r.split('\t')[0] for r in result], dtype=float)
-            spec = np.array([r.split('\t')[1] for r in result], dtype=float)
+            wave_len = np.array([r.split('\t')[0] for r in result], dtype=float)[8:-3]
+            spec = np.array([r.split('\t')[1] for r in result], dtype=float)[8:-3]
             # spec = (spec - self.dark) / self.reference - self.dark
             result = (wave_len, spec)
         return result

@@ -64,7 +64,7 @@ class SpecWindow:
         label_text = Label(self.window, text="端口:")
         label_text.place(x=500, y=28)
 
-        self.spec = SpecCtrl(dev_path='/dev/ttyUSB0', baud_rate=115200, timeout=0.5)
+        self.spec = SpecCtrl(dev_path='/dev/ttyUSB0', baud_rate=115200, timeout=5)
 
         self.connect_button = None
         self.lamp_button = None
